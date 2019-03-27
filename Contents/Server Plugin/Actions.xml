@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<Actions>
+	<Action id="goToPreset" deviceFilter="self">
+		<Name>Go to preset position</Name>
+		<CallbackMethod>goToPreset</CallbackMethod>
+		<ConfigUI>
+			<Field id="preset" type="textfield">
+				<Label>Preset Id:</Label>
+				<Description>1-16</Description>
+			</Field>
+		</ConfigUI>
+	</Action>
+	<Action id="stop" deviceFilter="self">
+		<Name>Stop Movement</Name>
+		<CallbackMethod>stop</CallbackMethod>
+	</Action>
+	<Action id="irOn" deviceFilter="self">
+		<Name>Turn IR On</Name>
+		<CallbackMethod>irOn</CallbackMethod>
+	</Action>
+	<Action id="irOff" deviceFilter="self">
+		<Name>Turn IR Off</Name>
+		<CallbackMethod>irOff</CallbackMethod>
+	</Action>
+	<Action id="snap" deviceFilter="self">
+		<Name>Email Snapshot</Name>
+		<CallbackMethod>snap</CallbackMethod>
+		<ConfigUI>
+			<Field id="subject" type="textfield">
+				<Label>Subject:</Label>
+				<Description>email subject line</Description>
+			</Field>
+			<Field id="recipient" type="textfield">
+				<Label>Recipient:</Label>
+				<Description>recipient email address</Description>
+			</Field>
+		</ConfigUI>
+	</Action>
+</Actions>

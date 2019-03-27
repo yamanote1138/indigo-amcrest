@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<Devices>
+	<Device type="custom" id="camera">
+		<Name>Amcrest IP Camera</Name>
+		<ConfigUI>
+			<Field id="ipaddress" type="textfield">
+				<Label>Hostname:</Label>
+				<Description>enter the hostname or ip address of your camera</Description>
+			</Field>
+			<Field id="username" type="textfield" default="admin">
+				<Label>Username:</Label>
+				<Description>enter the username for your camera</Description>
+			</Field>
+			<Field id="password" type="textfield" default="">
+				<Label>Password:</Label>
+				<Description>enter the password for your camera</Description>
+			</Field>
+		</ConfigUI>
+	</Device>
+</Devices>
