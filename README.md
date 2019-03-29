@@ -1,7 +1,7 @@
 indigo-amcrest
 =============
 
-Indigo plugin to control Foscam webcams.
+Indigo plugin to control Amcrest webcams.
 
 ### Installation Instructions
 
