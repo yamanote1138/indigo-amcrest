@@ -4,7 +4,7 @@ import requests
 import json
 from requests.auth import HTTPDigestAuth
 
-def xmitToCamera(cgiPath, params):
+def xmitToCamera(cgiPath, params=None):
 
   # note: params has to be a sequence of two-valud tuples in order to stay in order
   # unfortunately, Amcrest's API doesn't work if the params aren't in a set order
@@ -14,10 +14,7 @@ def xmitToCamera(cgiPath, params):
   password = '1ts4tr4p!'
 
   url = 'http://%s/cgi-bin/%s.cgi' % (host, cgiPath)
-  r = requests.get(url, params=params, auth=HTTPDigestAuth(username, password))
-
-  print(u"url: "+r.url)
-  print(u"res: "+r.text)
+  return requests.get(url, params=params, auth=HTTPDigestAuth(username, password))
 
 # move camera to preset position
 def goToPreset():
@@ -33,4 +30,14 @@ def goToPreset():
   )
   xmitToCamera("ptz", params)
 
-goToPreset()
+def snap():
+  resp = xmitToCamera('snapshot.cgi')
+
+  # todo: serialize filename, pass to sendViaEmail
+  snappath = "/tmp/snap.jpg"
+  f = open(snappath, 'w')
+  f.write(resp.content)
+  f.close()
+
+# goToPreset()
+snap()
