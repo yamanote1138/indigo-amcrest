@@ -11,14 +11,14 @@
 	<key>CFBundleDisplayName</key>
 	<string>Foscam Controller</string>
 	<key>CFBundleIdentifier</key>
-	<string>io.thechad.indigoplugin.foscam</string>
+	<string>io.thechad.indigoplugin.amcrest</string>
 	<key>CFBundleVersion</key>
 	<string>1.0.0</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
 			<key>CFBundleURLName</key>
-			<string>https://github.com/discgolfer1138/indigo-foscam</string>
+			<string>https://github.com/yamanote1139/indigo-amcrest</string>
 		</dict>
 	</array>
 </dict>
