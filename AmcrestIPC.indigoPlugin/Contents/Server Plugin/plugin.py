@@ -24,6 +24,9 @@ class Plugin(indigo.PluginBase):
   def toggleDebugging(self):
     self.debug = not self.debug
 
+  def logState(self, dev):
+    self.logger.info("lastsnap: %s" % dev.states['lastsnap'])
+
   def xmitToCamera(self, cgiPath, params, dev):
 
     if cgiPath is None: return self.logger.error("no cgi path defined")
@@ -58,7 +61,7 @@ class Plugin(indigo.PluginBase):
   def snap(self, pluginAction, dev):
     self.logger.debug(u"snap called")
     if dev is None: return self.logger.error(u"no device defined")
-    resp = self.xmitToCamera('snapshot.cgi', {}, dev)
+    resp = self.xmitToCamera('snapshot', {}, dev)
 
     timestr = time.strftime("%Y%m%d-%H%M%S")
     snappath = "%s/%s_%s.jpg" % (dev.pluginProps['basepath'], dev.name, timestr)
@@ -66,4 +69,4 @@ class Plugin(indigo.PluginBase):
     f.write(resp.content)
     f.close()
 
-    dev.states['lastsnap'] = snappath
+    dev.updateStateOnServer('lastsnap', value=snappath)

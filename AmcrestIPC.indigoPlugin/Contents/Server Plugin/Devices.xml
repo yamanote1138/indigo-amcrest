@@ -31,5 +31,6 @@
 				<ControlPageLabel>Last Snap Path</ControlPageLabel>
 			</State>
 		</States>
+		<UiDisplayStateId>lastsnap</UiDisplayStateId>
 	</Device>
 </Devices>
