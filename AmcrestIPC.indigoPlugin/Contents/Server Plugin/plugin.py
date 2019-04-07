@@ -24,9 +24,6 @@ class Plugin(indigo.PluginBase):
   def toggleDebugging(self):
     self.debug = not self.debug
 
-  def logState(self, dev):
-    self.logger.info("lastsnap: %s" % dev.states['lastsnap'])
-
   def xmitToCamera(self, cgiPath, params, dev):
 
     if cgiPath is None: return self.logger.error("no cgi path defined")
