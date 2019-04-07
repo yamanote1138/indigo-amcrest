@@ -1,6 +1,6 @@
 #! /usr/bin/env python
 
-import requests
+import requests, time
 from requests.auth import HTTPDigestAuth
 
 def xmitToCamera(cgiPath, params=None):
@@ -8,9 +8,9 @@ def xmitToCamera(cgiPath, params=None):
   # note: params has to be a sequence of two-valud tuples in order to stay in order
   # unfortunately, Amcrest's API doesn't work if the params aren't in a set order
 
-  host = '192.168.1.13'
+  host = '192.168.1.11'
   username = 'admin'
-  password = '1ts4tr4p!'
+  password = 'thr33p10'
 
   url = 'http://%s/cgi-bin/%s.cgi' % (host, cgiPath)
   return requests.get(url, params=params, auth=HTTPDigestAuth(username, password))
@@ -33,7 +33,8 @@ def snap():
   resp = xmitToCamera('snapshot.cgi')
 
   # todo: serialize filename, pass to sendViaEmail
-  snappath = "/tmp/snap.jpg"
+  timestr = time.strftime("%Y%m%d-%H%M%S")
+  snappath = "/tmp/streetwise_"+timestr+".jpg"
   f = open(snappath, 'w')
   f.write(resp.content)
   f.close()

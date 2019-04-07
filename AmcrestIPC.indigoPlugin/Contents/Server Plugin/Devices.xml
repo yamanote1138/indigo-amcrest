@@ -3,7 +3,7 @@
 	<Device type="custom" id="camera">
 		<Name>Amcrest IP Camera</Name>
 		<ConfigUI>
-			<Field id="ipaddress" type="textfield">
+			<Field id="hostname" type="textfield">
 				<Label>Hostname:</Label>
 				<Description>enter the hostname or ip address of your camera</Description>
 			</Field>
@@ -15,6 +15,21 @@
 				<Label>Password:</Label>
 				<Description>enter the password for your camera</Description>
 			</Field>
+			<Field id="basepath" type="textfield" defaultValue="/tmp">
+				<Label>Snapshot path:</Label>
+				<Description>where to save snapshot images</Description>
+			</Field>
+			<Field id="ptz" type="checkbox" default="true">
+				<Label>PTZ:</Label>
+				<Description>this camera moves</Description>
+			</Field>
 		</ConfigUI>
+		<States>
+			<State id="lastsnap">
+				<ValueType>string</ValueType>
+				<TriggerLabel>Last Snap Path</TriggerLabel>
+				<ControlPageLabel>Last Snap Path</ControlPageLabel>
+			</State>
+		</States>
 	</Device>
 </Devices>
