@@ -1,5 +1,8 @@
 #! /usr/bin/env python
 
+import sys
+sys.path.append('dependencies')
+
 import requests, time
 from requests.auth import HTTPDigestAuth
 
