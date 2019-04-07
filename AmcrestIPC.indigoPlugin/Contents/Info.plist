@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>PluginVersion</key>
-	<string>1.0.3</string>
+	<string>1.0.0</string>
 	<key>ServerApiVersion</key>
 	<string>1.0</string>
 	<key>IwsApiVersion</key>
 	<string>1.0.0</string>
 	<key>CFBundleDisplayName</key>
-	<string>Foscam Controller</string>
+	<string>Amcrest IPC Controller</string>
 	<key>CFBundleIdentifier</key>
 	<string>io.thechad.indigoplugin.amcrest</string>
 	<key>CFBundleVersion</key>

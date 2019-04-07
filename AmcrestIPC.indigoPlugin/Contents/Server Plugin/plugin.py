@@ -41,16 +41,16 @@ class Plugin(indigo.PluginBase):
     preset = pluginAction.props['preset']
     if preset is None: return self.logger.error(u"no preset defined")
 
-	  params = (
-	    ('action','start'),
-	    ('channel',0),
-	    ('code','GotoPreset'),
-	    ('arg1',0),
-	    ('arg2',preset),
-	    ('arg3',0),
-	    ('arg4',0)
-	  )
-	  self.xmitToCamera("ptz", params, dev)
+    params = (
+      ('action','start'),
+      ('channel',0),
+      ('code','GotoPreset'),
+      ('arg1',0),
+      ('arg2',preset),
+      ('arg3',0),
+      ('arg4',0)
+    )
+    self.xmitToCamera("ptz", params, dev)
 
   def snap(self, pluginAction, dev):
     self.logger.debug(u"snap called")
@@ -58,10 +58,10 @@ class Plugin(indigo.PluginBase):
     resp = self.xmitToCamera('snapshot.cgi', {}, dev)
     snapimg = resp.read()
 
-	  timestr = time.strftime("%Y%m%d-%H%M%S")
-	  snappath = "%s/%s_%s.jpg" % (dev.pluginProps['basepath'], dev.name, timestr)
-	  f = open(snappath, 'w')
-	  f.write(resp.content)
-	  f.close()
+    timestr = time.strftime("%Y%m%d-%H%M%S")
+    snappath = "%s/%s_%s.jpg" % (dev.pluginProps['basepath'], dev.name, timestr)
+    f = open(snappath, 'w')
+    f.write(resp.content)
+    f.close()
 
-	  dev.states['lastsnap'] = snappath
+    dev.states['lastsnap'] = snappath
