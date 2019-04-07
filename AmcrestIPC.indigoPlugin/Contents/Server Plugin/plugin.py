@@ -59,7 +59,6 @@ class Plugin(indigo.PluginBase):
     self.logger.debug(u"snap called")
     if dev is None: return self.logger.error(u"no device defined")
     resp = self.xmitToCamera('snapshot.cgi', {}, dev)
-    snapimg = resp.read()
 
     timestr = time.strftime("%Y%m%d-%H%M%S")
     snappath = "%s/%s_%s.jpg" % (dev.pluginProps['basepath'], dev.name, timestr)

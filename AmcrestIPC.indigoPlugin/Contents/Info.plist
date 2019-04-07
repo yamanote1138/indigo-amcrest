@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>PluginVersion</key>
-	<string>1.0.3</string>
+	<string>1.0.5</string>
 	<key>ServerApiVersion</key>
 	<string>1.0</string>
 	<key>IwsApiVersion</key>
@@ -18,7 +18,7 @@
 	<array>
 		<dict>
 			<key>CFBundleURLName</key>
-			<string>https://github.com/yamanote1139/indigo-amcrest</string>
+			<string>https://github.com/yamanote1138/indigo-amcrest</string>
 		</dict>
 	</array>
 </dict>
